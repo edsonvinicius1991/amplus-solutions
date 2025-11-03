@@ -233,19 +233,18 @@ logger.error = (msg, options) => {
 }
 
 export default defineConfig({
-	customLogger: logger,
-	plugins: [
-		...(isDev ? [inlineEditPlugin(), editModeDevPlugin(), iframeRouteRestorationPlugin()] : []),
-		react(),
-		addTransformIndexHtml
-	],
-	server: {
-		cors: true,
-		headers: {
-			'Cross-Origin-Embedder-Policy': 'credentialless',
-		},
-		allowedHosts: true,
-	},
+  customLogger: logger,
+  plugins: [
+    ...(isDev ? [inlineEditPlugin(), editModeDevPlugin(), iframeRouteRestorationPlugin()] : []),
+    react(),
+    addTransformIndexHtml
+  ],
+  server: {
+    cors: true,
+    // Removido COEP para permitir embeds de terceiros (ex: Vimeo) em dev
+    headers: {},
+    allowedHosts: true,
+  },
 	resolve: {
 		extensions: ['.jsx', '.js', '.tsx', '.ts', '.json', ],
 		alias: {

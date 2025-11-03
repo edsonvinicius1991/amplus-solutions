@@ -75,7 +75,9 @@ const Hero = () => {
               src="https://player.vimeo.com/video/1125839797?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1&playsinline=1"
               className="absolute top-0 left-0 w-full h-full"
               frameBorder="0"
-              allow="autoplay; fullscreen; picture-in-picture"
+              loading="lazy"
+              allow="autoplay; fullscreen; picture-in-picture; encrypted-media"
+              referrerPolicy="no-referrer-when-downgrade"
               title="Equipe de negócios colaborando em um escritório moderno com gráficos de dados digitais"
             ></iframe>
           </motion.div>
