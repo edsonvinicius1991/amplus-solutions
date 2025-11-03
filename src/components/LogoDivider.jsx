@@ -111,8 +111,10 @@ const PortfolioCarousel = () => {
               <img
                 src={portfolioImages2[0]}
                 alt="Imagem do projeto NutriPlan"
-                className="w-full aspect-video object-cover"
+                className="w-full aspect-video object-contain bg-white max-w-full"
                 loading="lazy"
+                decoding="async"
+                fetchpriority="low"
               />
               <div className="p-4">
                 <h3 className="text-xl font-semibold text-slate-900">NutriPlan</h3>
